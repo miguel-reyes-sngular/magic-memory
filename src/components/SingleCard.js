@@ -1,10 +1,12 @@
 import './SingleCard.css'
 
 export const SingleCard = props => {
-  const { card, handleChoice, flipped } = props
+  const { card, handleChoice, flipped, disabled } = props
 
   const handleClick = () => {
-    handleChoice(card)
+    if (!disabled) {
+      handleChoice(card)
+    }
   }
 
   return (
