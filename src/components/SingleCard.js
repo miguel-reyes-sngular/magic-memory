@@ -1,7 +1,7 @@
 import './SingleCard.css'
 
 export const SingleCard = props => {
-  const { card, handleChoice } = props
+  const { card, handleChoice, flipped } = props
 
   const handleClick = () => {
     handleChoice(card)
@@ -9,7 +9,7 @@ export const SingleCard = props => {
 
   return (
     <div className="card">
-      <div>
+      <div className={ flipped ? "flipped" : "" }>
         <img src={card.src} alt="card front" className='front' />
         <img
           onClick={handleClick}
