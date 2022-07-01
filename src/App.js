@@ -51,8 +51,6 @@ function App() {
     }
   }, [choiceOne, choiceTwo])
 
-  console.log(cards);
-
   const resetTurn = () => {
     setChoiceOne(null)
     setChoiceTwo(null)
@@ -74,10 +72,10 @@ function App() {
           cards.map(card => (
             <SingleCard
               card={card}
-              key={card.id}
-              handleChoice={handleChoice}
-              flipped={card === choiceOne || card === choiceTwo || card.matched}
               disabled={disabled}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              handleChoice={handleChoice}
+              key={card.id}
             />
           ))
         }
